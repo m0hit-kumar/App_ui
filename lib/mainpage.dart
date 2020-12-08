@@ -64,12 +64,13 @@ class _mainPageState extends State<mainPage> {
                         textAlign: TextAlign.right,
                         style: TextStyle(
                           color: Colors.white,
-                          fontSize: 33.0,
-                        ),),
+                          fontSize: 25.0,
+                          ),
+                        ),
                         SizedBox(width: 10.0,)
                       ],
                     )
-                    ],
+                  ],
                 ),
               ],
             ),
