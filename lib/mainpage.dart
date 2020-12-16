@@ -14,6 +14,9 @@ class _mainPageState extends State<mainPage> {
       home: Scaffold(
         body: Stack(
           children: [
+            Container(
+              child: linear(),
+            ),
             backImage(),
             SingleChildScrollView(
               child:Container(

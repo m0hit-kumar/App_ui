@@ -9,23 +9,6 @@ class backImage extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
-          gradient: LinearGradient(
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
-              stops:[0.1, 0.2, 0.4, 0.6,0.8,1.0],
-              colors: [
-
-                backGround.withOpacity(0.72),
-                backGround.withOpacity(0.79),
-                backGround.withOpacity(0.82),
-                backGround.withOpacity(0.89),
-                backGround.withOpacity(0.9),
-                backGround,
-              ]
-          )
-      ),
-
       child: Container(
         child: CustomPaint(
           painter: DrawFig(),
@@ -72,6 +55,29 @@ class DrawFig extends CustomPainter{
   @override
   bool shouldRepaint(CustomPainter oldDelegate) {
     return false;
+  }
+}
+
+class linear extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(decoration: BoxDecoration(
+        gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            stops:[0.1, 0.2, 0.4, 0.6,0.8,1.0],
+            colors: [
+
+              backGround.withOpacity(0.72),
+              backGround.withOpacity(0.79),
+              backGround.withOpacity(0.82),
+              backGround.withOpacity(0.89),
+              backGround.withOpacity(0.9),
+              backGround,
+            ]
+        )
+    ),
+    );
   }
 }
 
