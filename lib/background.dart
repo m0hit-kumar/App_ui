@@ -1,22 +1,11 @@
 import 'package:flutter/material.dart';
 import 'dart:ui' as ui;
 
-class backimage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: HomePage(
-      ),
-    );
-
-  }
-}
-
 const Color backGround = Color(0xFF092C28);
 const Color circle_color = Color(0xFFAAC97B);
 
 
-class HomePage extends StatelessWidget{
+class backImage extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return Container(

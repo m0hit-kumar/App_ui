@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:green_earth/background.dart';
 import 'package:green_earth/calender class.dart';
 
 class mainPage extends StatefulWidget {
@@ -11,11 +12,11 @@ class _mainPageState extends State<mainPage> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: Colors.teal,
-        body: SingleChildScrollView(
-          child: Stack(
-            children: [
-              Container(
+        body: Stack(
+          children: [
+            backImage(),
+            SingleChildScrollView(
+              child:Container(
                 margin: EdgeInsets.only(top: 20.0),
                 child: Column(
                   children: <Widget>[
@@ -75,18 +76,18 @@ class _mainPageState extends State<mainPage> {
                         )
                       ],
                     ),
-                    Column(
-                        children: [displaydates(0),
-                          displaydates(1),
-                          displaydates(2),
-                          displaydates(3),
-                          displaydates(4),]
-                    ),
+//                    Column(
+//                        children: [displaydates(0),
+//                          displaydates(1),
+//                          displaydates(2),
+//                          displaydates(3),
+//                          displaydates(4),]
+//                    ),
                   ],
                 ),
               ),
-            ],
-          ),
+            ),
+          ]
         ),
       ),
     );
