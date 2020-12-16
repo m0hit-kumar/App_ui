@@ -5,13 +5,13 @@ const Color backGround = Color(0xFF092C28);
 const Color circle_color = Color(0xFFAAC97B);
 
 
-class backImage extends StatelessWidget{
+class circleDraw extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return Container(
       child: Container(
         child: CustomPaint(
-          painter: DrawFig(),
+          painter: DrawFig(context: context),
         ),
       ),
 
@@ -20,7 +20,9 @@ class backImage extends StatelessWidget{
 }
 
 class DrawFig extends CustomPainter{
-  @override
+  final BuildContext context;
+
+  DrawFig({this.context});
   void paint(Canvas canvas, Size size) {
 
     Paint paint =Paint()
@@ -35,18 +37,17 @@ class DrawFig extends CustomPainter{
 
       );
     //1
-    canvas.drawCircle(Offset(395, 30),50,paint);
+    canvas.drawCircle(Offset(MediaQuery.of(context).size.height/2, MediaQuery.of(context).size.width/9),50,paint);
     //2
-    canvas.drawCircle(Offset(-20, 210),90, paint);
+    canvas.drawCircle(Offset(MediaQuery.of(context).size.width/50, MediaQuery.of(context).size.width/2),90, paint);
 
     //3
-    canvas.drawCircle(Offset(430, 405),50, paint);
-
+    canvas.drawCircle(Offset(MediaQuery.of(context).size.height/2,MediaQuery.of(context).size.width),50, paint);
+    var y=MediaQuery.of(context).size.height -(MediaQuery.of(context).size.height/3);
     //4
-    canvas.drawCircle(Offset(110, 650),60, paint);
+    canvas.drawCircle(Offset(MediaQuery.of(context).size.width/36, y),60, paint);
     //5
-    canvas.drawCircle(Offset(480, 850),200, paint);
-
+    canvas.drawCircle(Offset(MediaQuery.of(context).size.height/2, MediaQuery.of(context).size.width*2),150, paint);
 
 
 
@@ -58,7 +59,7 @@ class DrawFig extends CustomPainter{
   }
 }
 
-class linear extends StatelessWidget {
+class backLinear extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(decoration: BoxDecoration(

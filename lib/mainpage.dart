@@ -14,8 +14,8 @@ class _mainPageState extends State<mainPage> {
       home: Scaffold(
         body: Stack(
           children: [
-            linear(),
-            backImage(),
+            backLinear(),
+            circleDraw(),
             SingleChildScrollView(
               child:Container(
                 margin: EdgeInsets.only(top: 20.0),
