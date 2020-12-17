@@ -37,17 +37,16 @@ class DrawFig extends CustomPainter{
 
       );
     //1
-    canvas.drawCircle(Offset(MediaQuery.of(context).size.height/2, MediaQuery.of(context).size.width/9),50,paint);
+    canvas.drawCircle(Offset(MediaQuery.of(context).size.width/1.08, MediaQuery.of(context).size.height/25),60,paint);
     //2
-    canvas.drawCircle(Offset(MediaQuery.of(context).size.width/50, MediaQuery.of(context).size.width/2),90, paint);
+    canvas.drawCircle(Offset(MediaQuery.of(context).size.width-430, MediaQuery.of(context).size.height/3.3),80, paint);
 
     //3
-    canvas.drawCircle(Offset(MediaQuery.of(context).size.height/2,MediaQuery.of(context).size.width),50, paint);
-    var y=MediaQuery.of(context).size.height -(MediaQuery.of(context).size.height/3);
+    canvas.drawCircle(Offset(MediaQuery.of(context).size.height/2,MediaQuery.of(context).size.height/2),60, paint);
     //4
-    canvas.drawCircle(Offset(MediaQuery.of(context).size.width/36, y),60, paint);
+    canvas.drawCircle(Offset(MediaQuery.of(context).size.width-400,MediaQuery.of(context).size.height-200 ),60, paint);
     //5
-    canvas.drawCircle(Offset(MediaQuery.of(context).size.height/2, MediaQuery.of(context).size.width*2),150, paint);
+    canvas.drawCircle(Offset(MediaQuery.of(context).size.width+70, MediaQuery.of(context).size.height),200, paint);
 
 
 
