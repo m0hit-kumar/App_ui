@@ -19,221 +19,157 @@ class LeaderBoard extends StatefulWidget {
   _LeaderBoardState createState() => _LeaderBoardState();
 }
 
-class _MyAppState extends State<LeaderBoard> {
+
+
+class _LeaderBoardState extends State<LeaderBoard> {
   bool profileInfo = true;
   bool leaderBoard = false;
 
   @override
   Widget build(BuildContext context) {
-    final profileHeight = MediaQuery.of(context).size.height * 0.5;
     return Scaffold(
-      backgroundColor: Colors.black,
-      body: DefaultTabController(
-          length: 2,
-          child: Scaffold(
-            appBar: PreferredSize(
-              preferredSize: Size(200.0, profileHeight),
-              child: AppBar(flexibleSpace:Column(children: [
-                SizedBox(
-                  height: 80,
-                ),
-
-                Text(
-                  "Sundhar Pichai",
-                  style: TextStyle(
-                    fontSize: 25,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.grey[200],
+        backgroundColor: Colors.grey[200],
+        appBar: AppBar(
+          elevation: 0,
+          backgroundColor: Colors.grey[200],
+          leading: IconButton(
+            icon: Icon(
+              Icons.arrow_back,
+              color: cool,
+            ),
+            tooltip: 'Go to home',
+            onPressed: () {},
+          ),
+          actions: [
+            IconButton(
+              icon: Icon(
+                Icons.edit,
+                color: cool,
+              ),
+              tooltip: 'Edit Profile',
+              onPressed: () {},
+            ), //IconBut
+          ], //IconBut,),
+        ),
+        body: Column(
+          children: [
+            Column(
+              children: <Widget>[
+                ListTile(
+                  leading: CircleAvatar(
+                    radius: 50,
+                    foregroundColor: Colors.blue,
+                    backgroundColor: Colors.grey,
+                  ),
+                  title: Text(
+                    'Sundhar Pichai',
+                    style: TextStyle(
+                        color: cool, fontWeight: FontWeight.bold, fontSize: 24),
+                  ),
+                  subtitle: Text(
+                    '@Username',
+                    style: TextStyle(color: cool, fontSize: 18),
                   ),
                 ),
-                SizedBox(
-                  height: 50,
-                ),
-
-                Center(
-                  child: CircleAvatar(
-                    backgroundColor: avtar_backGround.withOpacity(0.1),
-                    radius: 80,
-                    child: CircleAvatar(
-                      backgroundColor: CupertinoColors.activeBlue,
-                      radius: 65,
+              ],
+            ),
+            Padding(
+              padding: const EdgeInsets.all(18.0),
+              child: Column(
+                children: [
+                  ListTile(
+                    leading: Icon(Icons.mail),
+                    title: Text(
+                      'sundharpichai@gmail.com',
+                      style: TextStyle(
+                        color: cool,
+                      ),
                     ),
                   ),
-                ),
-
-              ],),
-
-
-                shape:RoundedRectangleBorder(
-                  borderRadius: BorderRadius.only(
-                    topRight: Radius.circular(0.0),
-                    topLeft: Radius.circular(0.0),
-                    bottomRight: Radius.circular(0.0),
-                    bottomLeft: Radius.circular(90.0),
+                  ListTile(
+                    leading: Icon(Icons.phone),
+                    title: Text(
+                      '0123-4567-8910',
+                      style: TextStyle(
+                        color: cool,
+                      ),
+                    ),
                   ),
-                ),
-                backgroundColor: prof_Card,
-                elevation: 0,
-                bottom: PreferredSize(preferredSize: Size(200.0,200.0),
-                  child: Padding(
-                    padding: const EdgeInsets.all(25.0),
-                    child: TabBar(
-                        unselectedLabelColor: Colors.grey[200],
-                        indicatorSize: TabBarIndicatorSize.label,
-                        indicator: BoxDecoration(
-                            borderRadius: BorderRadius.circular(50),
-                            color: avtar_backGround1),
-                        tabs: [
-                          Tab(
-                            child: Container(
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(50),
-                              ),
-                              child: Align(
-                                alignment: Alignment.center,
-                                child: Text("Profile"),
-                              ),
-                            ),
+                ],
+              ),
+            ),
+            Table(
+              border: TableBorder.all(
+                  color: Colors.grey, style: BorderStyle.solid, width: 0.4),
+              children: [
+                TableRow(children: [
+                  Column(
+                    children: [
+                      ListTile(
+                        title: Center(
+                          child: Text(
+                            "2",
+                            style: TextStyle(
+                                fontSize: 20, fontWeight: FontWeight.bold),
                           ),
-                          Tab(
-                            child: Container(
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(50),
-                              ),
-                              child: Align(
-                                alignment: Alignment.center,
-                                child: Text("Leaderboard"),
-                              ),
-                            ),
-                          ),
-                        ]),
+                        ),
+                        subtitle: Center(child: Text("Streak")),
+                      ),
+                    ],
                   ),
-                ),
+                  Column(
+                    children: [
+                      ListTile(
+                        title: Center(
+                          child: Text(
+                            "20",
+                            style: TextStyle(
+                                fontSize: 20, fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                        subtitle: Center(child: Text("Postion")),
+                      ),
+                    ],
+                  ),
+                ]),
+              ],
+            ),
+            Padding(
+              padding: const EdgeInsets.all(18.0),
+              child: Column(
+                children: [
+                  ListTile(
+                    leading: Icon(Icons.group_outlined),
+                    title: Text('About Us '
+                    ),
+                  ),
+                  ListTile(
+                    leading: Icon(Icons.payment),
+                    title: Text('Donate'),
+                  ),
+                  ListTile(
+                    leading: Icon(Icons.group_add),
+                    title: Text('Tell your Friend'),
+                  ),
+                  ListTile(
+                    leading: Icon(Icons.feedback),
+                    title: Text('Feedback'),
+                  ),
+
+                  ListTile(
+                    leading: Icon(Icons.settings),
+                    title: Text('Settings'),
+                  ),
+                ],
               ),
             ),
 
 
 
-            body: TabBarView(children: [
-              Container(height:profileHeight,child: ListView(
-                children: [
-                  ListTile(
-                    leading: Icon(Icons.alternate_email),
-                    title: Text('Username'),
-                  ),
-                  SizedBox(
-                    height: 0.5,
-                    width: MediaQuery.of(context).size.width,
-                    child: Container(
-                      width: MediaQuery.of(context).size.width,
-                      color: Colors.grey,
-                    ),
-                  ),
-                  ListTile(
-                    leading: Icon(Icons.account_circle),
-                    title: Text(
-                      'Name',
-                    ),
-                  ),
-                  SizedBox(
-                    height: 0.5,
-                    width: MediaQuery.of(context).size.width,
-                    child: Container(
-                      width: MediaQuery.of(context).size.width,
-                      color: Colors.grey,
-                    ),
-                  ),
-                  ListTile(
-                    leading: Icon(Icons.email),
-                    title: Text('Email-Id'),
-                  ),
-                  SizedBox(
-                    height: 0.5,
-                    width: MediaQuery.of(context).size.width,
-                    child: Container(
-                      width: MediaQuery.of(context).size.width,
-                      color: Colors.grey,
-                    ),
-                  ),
-                  ListTile(
-                    leading: Icon(Icons.phone),
-                    title: Text('Phone'),
-                  ),
-                  SizedBox(
-                    height: 0.5,
-                    width: MediaQuery.of(context).size.width,
-                    child: Container(
-                      width: MediaQuery.of(context).size.width,
-                      color: Colors.grey,
-                    ),
-                  ),
-                  ListTile(
-                    leading: Icon(Icons.keyboard_return),
-                    title: Text('Logout'),
-                  ),
-                ],
-              ),),
-              Container(height:profileHeight,child: ListView(
-                children: [
-                  ListTile(
-                    leading: Icon(Icons.alternate_email),
-                    title: Text('Username'),
-                  ),
-                  SizedBox(
-                    height: 0.5,
-                    width: MediaQuery.of(context).size.width,
-                    child: Container(
-                      width: MediaQuery.of(context).size.width,
-                      color: Colors.grey,
-                    ),
-                  ),
-                  ListTile(
-                    leading: Icon(Icons.account_circle),
-                    title: Text(
-                      'Name',
-                    ),
-                  ),
-                  SizedBox(
-                    height: 0.5,
-                    width: MediaQuery.of(context).size.width,
-                    child: Container(
-                      width: MediaQuery.of(context).size.width,
-                      color: Colors.grey,
-                    ),
-                  ),
-                  ListTile(
-                    leading: Icon(Icons.email),
-                    title: Text('Email-Id'),
-                  ),
-                  SizedBox(
-                    height: 0.5,
-                    width: MediaQuery.of(context).size.width,
-                    child: Container(
-                      width: MediaQuery.of(context).size.width,
-                      color: Colors.grey,
-                    ),
-                  ),
-                  ListTile(
-                    leading: Icon(Icons.phone),
-                    title: Text('Phone'),
-                  ),
-                  SizedBox(
-                    height: 0.5,
-                    width: MediaQuery.of(context).size.width,
-                    child: Container(
-                      width: MediaQuery.of(context).size.width,
-                      color: Colors.grey,
-                    ),
-                  ),
-                  ListTile(
-                    leading: Icon(Icons.keyboard_return),
-                    title: Text('Logout'),
-                  ),
-                ],
-              ),),
-
-            ]),
-          )),
-    );
+          ],
+        ));
   }
 }
+
+
+
